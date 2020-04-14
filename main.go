@@ -37,9 +37,7 @@ func main() {
 	}))
 
 	router.GET("/", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "index.tmpl", gin.H{
-			"title": "Test Title",
-		})
+		c.HTML(http.StatusOK, "index.tmpl")
 	})
 
 	// router.GET("/jokes", controllers.FindJokes)

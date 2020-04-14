@@ -17,6 +17,20 @@ body {
 h1 {
   font-size: 48px;
 }
+@media (max-width: 969px) {
+  h1 {
+    font-size: 30px;
+  }
+}
+
+button {
+  padding: 5px 10px;
+  background: #d40000;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+}
 
 .wrapper {
   min-width: 320px;
@@ -26,6 +40,20 @@ h1 {
   text-align: center;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+
+footer {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+footer span {
+  font-weight: bold;
+}
+footer span a {
+  text-decoration: none;
+  color: #d40000;
 }
 
 /*# sourceMappingURL=style.css.map */

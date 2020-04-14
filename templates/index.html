@@ -13,16 +13,23 @@
         <button class="jokefetch">Get a new joke</button>
       </div>
     </div>
+    <footer>
+      <span>&copy; 2020 <a href="https://jhoot.dev">Jhoot.dev</a></span>
+    </footer>
   </body>
   <script>
     const jokeH2 = document.querySelector(".joke");
     const fetchJokeButton = document.querySelector(".jokefetch");
+    const jokeWrapper = document.querySelector(".wrapper");
 
     function fetchJoke() {
-      fetch("https://dadjokes-lol.uc.r.appspot.com/random")
+      fetch("http://localhost:8080/random")
         .then((res) => res.json())
         .then((data) => {
           jokeH2.innerHTML = data.data.joke;
+          wrapper.style.left = "50%";
+          wrapper.style.top = "50%";
+          wrapper.style.tranform = "translate(-50%, -50%)";
         });
     }
 

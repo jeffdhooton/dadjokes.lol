@@ -13,16 +13,23 @@
         <button class="jokefetch">Get a new joke</button>
       </div>
     </div>
+    <footer>
+      <span>&copy; 2020 <a href="https://jhoot.dev">Jhoot.dev</a></span>
+    </footer>
   </body>
   <script>
     const jokeH2 = document.querySelector(".joke");
     const fetchJokeButton = document.querySelector(".jokefetch");
+    const jokeWrapper = document.querySelector(".wrapper");
 
     function fetchJoke() {
-      fetch("https://dadjokes-lol.uc.r.appspot.com/random")
+      fetch("http://dadjokes.lol/random")
         .then((res) => res.json())
         .then((data) => {
           jokeH2.innerHTML = data.data.joke;
+          wrapper.style.left = "50%";
+          wrapper.style.top = "50%";
+          wrapper.style.tranform = "translate(-50%, -50%)";
         });
     }
 
@@ -30,35 +37,4 @@
 
     fetchJokeButton.addEventListener("click", fetchJoke);
   </script>
-  <style>
-    * {
-      box-sizing: border-box;
-      font-family: "Montserrat", sans-serif;
-    }
-
-    body {
-      margin: 0;
-    }
-
-    .container {
-      position: fixed;
-      width: 100vw;
-      height: 100vh;
-      background: #f7f7f7;
-    }
-
-    h1 {
-      font-size: 48px;
-    }
-
-    .wrapper {
-      min-width: 320px;
-      width: 50%;
-      position: absolute;
-      left: 50%;
-      text-align: center;
-      top: 50%;
-      transform: translate(-50%, -50%);
-    }
-  </style>
 </html>

@@ -16,6 +16,19 @@ body {
 
 h1 {
   font-size: 48px;
+
+  @media (max-width: 969px) {
+    font-size: 30px;
+  }
+}
+
+button {
+  padding: 5px 10px;
+  background: #d40000;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
 }
 
 .wrapper {
@@ -26,4 +39,20 @@ h1 {
   text-align: center;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+
+footer {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  span {
+    font-weight: bold;
+
+    a {
+      text-decoration: none;
+      color: #d40000;
+    }
+  }
 }
