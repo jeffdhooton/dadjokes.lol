@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dad Jokes</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <h1 class="joke"></h1>
+        <button class="jokefetch">Get a new joke</button>
+      </div>
+    </div>
+  </body>
+  <script>
+    const jokeH2 = document.querySelector(".joke");
+    const fetchJokeButton = document.querySelector(".jokefetch");
+
+    function fetchJoke() {
+      fetch("https://dadjokes-lol.uc.r.appspot.com/random")
+        .then((res) => res.json())
+        .then((data) => {
+          jokeH2.innerHTML = data.data.joke;
+        });
+    }
+
+    fetchJoke();
+
+    fetchJokeButton.addEventListener("click", fetchJoke);
+  </script>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: "Montserrat", sans-serif;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    .container {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      background: #f7f7f7;
+    }
+
+    h1 {
+      font-size: 48px;
+    }
+
+    .wrapper {
+      min-width: 320px;
+      width: 50%;
+      position: absolute;
+      left: 50%;
+      text-align: center;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</html>
